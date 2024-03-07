@@ -1,24 +1,40 @@
-<style>
-    .yes-button{
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      HTML CSS Review
+    </title>
+    <style>
+      .yes-button{
         background-color: green;
         color: white;
-    }
-    
-    .no-button{
+      }
+
+      .no-button{
         background-color: red;
         color: white;
-    }
-    
-    
-</style>
+      }
 
-<button>
-    Hello World!
-</button>
-<p>
-    Do you accept cookies?
-</p>
+    </style>
+  </head>
+  <body>
+    <button>
+      Hello World!
+    </button>
+    <p>
+      Do you accept cookies?
+    </p>
 
-<p>
-    Please, click <button title="I aggre." class="yes-button">Yes!</button> or <button title="I do not aggre." class="no-button">No!</button>
-</p>
+    <p>
+      Please, click <button title="I aggre." class="yes-button" onclick="
+        alert('You accepted cookies :D')
+        ">Yes!</button> or <button title="I do not aggre." class="no-button" onclick="
+        alert('You did not accepted cookies, but we are gonna use them anyway :D')
+        ">No!</button>
+    </p>
+
+    <script>
+      alert("Hello World!")
+    </script>
+  </body>
+</html>
