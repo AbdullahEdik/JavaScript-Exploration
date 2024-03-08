@@ -7,3 +7,4 @@
 - Added rock-paper-scissors game to the website.
 - Set images to buttons to show them better.
 - Updated button images with my own artwork. 
+- Added score table and reset button to reset score table.
