@@ -17,21 +17,30 @@
       .rock{
         background-image: url('./rock.png'); 
         background-size: cover; 
+        border-radius: 50%;
         width: 100px;
         height: 100px;
       }
       .paper{
         background-image: url('./paper.png'); 
         background-size: cover; 
+        border-radius: 50%;
         width: 100px;
         height: 100px;
       }
       .scissors{
         background-image: url('./scissors.png'); 
+        border-radius: 50%;
         background-size: cover; 
         width: 100px;
         height: 100px;
       }
+      .reset{
+        background-color: cadetblue;
+        color: black;
+        width: 100px;
+        height: 100px;
+        }
 
     </style>
   </head>
@@ -68,39 +77,60 @@
     rockPaperScissors(userChoice);
     ">
     </button>
+    <button class="reset" onclick="
+    scoreTable.draws = 0;
+    scoreTable.wins = 0;
+    scoreTable.losses = 0;
+    ">
+    Reset!
+    </button>
 
 
     <script>
       let userChoice;
-      
+      const scoreTable = {
+        wins: 0,
+        losses: 0,
+        draws: 0,
+      }
       function rockPaperScissors(userChoice){
         let computerChoice = Math.floor(Math.random() * 3);
+        
         console.log(computerChoice);
         if (userChoice === 0) {
           if (computerChoice === 0) {
-            alert("It is draw!");
+            scoreTable.draws++;
+            alert(`It is draw!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else if (confirm === 1){
-            alert("You lost!");
+            scoreTable.losses++;
+            alert(`You lost!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else {
-            alert("You win!")
+            scoreTable.wins++;
+            alert(`You win!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           }
         }
         else if (userChoice === 1) {
           if (computerChoice === 0) {
-            alert("You win!")
+            scoreTable.wins++;
+            alert(`You win!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else if (computerChoice === 1) {
-            alert("It is draw!");
+            scoreTable.draws++;
+            alert(`It is draw!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else {
-            alert("You lost!");
+            scoreTable.losses++;
+            alert(`You lost!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           }
         }
         else {
           if (computerChoice === 0) {
-            alert("You lost!");
+            scoreTable.losses++;
+            alert(`You lost!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else if (computerChoice === 1) {
-            alert("You win!")
+            scoreTable.wins++;
+            alert(`You win!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           } else {
-            alert("It is draw!");
+            scoreTable.draws++;
+            alert(`It is draw!\nWins: ${scoreTable.wins}, Losses: ${scoreTable.losses}, Draws: ${scoreTable.draws}`);
           }
         }
       }
