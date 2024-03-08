@@ -14,6 +14,24 @@
         background-color: red;
         color: white;
       }
+      .rock{
+        background-image: url('./rock.png'); 
+        background-size: cover; 
+        width: 100px;
+        height: 100px;
+      }
+      .paper{
+        background-image: url('./paper.png'); 
+        background-size: cover; 
+        width: 100px;
+        height: 100px;
+      }
+      .scissors{
+        background-image: url('./scissors.png'); 
+        background-size: cover; 
+        width: 100px;
+        height: 100px;
+      }
 
     </style>
   </head>
@@ -32,9 +50,60 @@
         alert('You did not accepted cookies, but we are gonna use them anyway :D')
         ">No!</button>
     </p>
+    <p class="GameTitle">
+      Rock Paper Scissors
+    </p>
+    <button class="rock" onclick="
+    userChoice = 0;
+    rockPaperScissors(userChoice);
+    ">
+    </button>
+    <button class="paper" onclick="
+    userChoice = 1;
+    rockPaperScissors(userChoice);
+    ">
+    </button>
+    <button class="scissors" onclick="
+    userChoice = 2;
+    rockPaperScissors(userChoice);
+    ">
+    </button>
+
 
     <script>
-      alert("Hello World!")
+      let userChoice;
+      
+      function rockPaperScissors(userChoice){
+        let computerChoice = Math.floor(Math.random() * 3);
+
+        if (userChoice === 0) {
+          if (computerChoice === 0) {
+            alert("It is draw!");
+          } else if (confirm === 1){
+            alert("You lost!");
+          } else {
+            alert("You win!")
+          }
+        }
+        else if (userChoice === 1) {
+          if (computerChoice === 0) {
+            alert("You win!")
+          } else if (computerChoice === 1) {
+            alert("It is draw!");
+          } else {
+            alert("You lost!");
+          }
+        }
+        else {
+          if (computerChoice === 0) {
+            alert("You lost!");
+          } else if (computerChoice === 1) {
+            alert("You win!")
+          } else {
+            alert("It is draw!");
+          }
+        }
+      }
     </script>
   </body>
 </html>
